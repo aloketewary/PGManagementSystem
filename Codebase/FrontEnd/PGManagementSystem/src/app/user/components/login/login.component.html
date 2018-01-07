@@ -1,0 +1,46 @@
+<div style="top:0;bottom:0;right:0;left:0;">
+  <mat-toolbar color="primary">
+    PG Management System</mat-toolbar>
+  <!-- <mat-card flex-layout>Simple card</mat-card> -->
+  <div class="container" style="margin: 7% 0 0 0;" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+    <div class="item item-1" fxFlex="50%">
+    </div>
+    <div class="item item-1" fxFlex="30%">
+      <mat-card class="card card-margin" flex-layout>
+        <mat-toolbar class="title" color="primary">Login</mat-toolbar>
+        <mat-card-content class="content">
+          <div class="login-container">
+            <form class="example-form">
+              <div flexLayout="column" flexLayoutAlign="start center">
+                <div fxLayout="row" fxLayoutAlign="space-around center" class="spaceIn">
+                  <div>
+                    <mat-icon matSuffix>person</mat-icon>
+                  </div>
+                  <div fxFlex="90">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Username">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center" class="spaceIn">
+                  <div>
+                    <mat-icon matSuffix>lock</mat-icon>
+                  </div>
+                  <div fxFlex="90">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Password">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="end center">
+                  <button mat-raised-button color="accent">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -2,13 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 // Import owncomponents here
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/components/login/login.component';
+import { LoginComponent } from './user/components/login/login.component';
 import { appRoutes } from './app.route';
 
 @NgModule({
@@ -24,7 +28,12 @@ import { appRoutes } from './app.route';
       { enableTracing: true } // <-- debugging purposes only
     ),
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
