@@ -15,14 +15,27 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './user/components/login/login.component';
 import { appRoutes } from './app.route';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryPGService } from './inMemory.web.api';
+import { AuthenticationService } from './share/service/authentication.service';
+import { LoginService } from './user/service/login.service';
+import { DashboardComponent } from './dashboardmodule/components/dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryPGService),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -35,7 +48,10 @@ import { appRoutes } from './app.route';
     MatIconModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
