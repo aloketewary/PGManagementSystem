@@ -30,13 +30,15 @@ import { DashboardComponent } from './dashboardmodule/components/dashboard/dashb
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountToModule } from 'angularx-count-to';
 import { DashboardService } from './dashboardmodule/services/dashboard.service';
+import { MembersComponent } from './dashboardmodule/components/members/members.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,

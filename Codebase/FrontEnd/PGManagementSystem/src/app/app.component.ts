@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.links = [
-      { id: 1, name: 'Don', href: '/don', icon: 'pencil' }
+      { id: 1, name: 'HOME', href: '/dashboard/home', icon: 'dashboard' },
+      { id: 2, name: 'MEMBERS', href: '/dashboard/members', icon: 'user' }
     ];
     this.checkForMediaQuery();
   }
