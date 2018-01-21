@@ -1,7 +1,38 @@
 <div class="app-root-style">
-
-  <mat-toolbar color="primary">
-    PG Management System</mat-toolbar>
-  <router-outlet></router-outlet>
-
+  <mat-sidenav-container #sidenav class="sidenav-root-container">
+    <mat-sidenav [mode]="sidebarMode" #sidenav class="sidenav-main">
+      <mat-toolbar class="default-theme" color="primary">
+        <span class="spacer"></span>
+        <div class="my-sidenav">
+        </div>
+      </mat-toolbar>
+      <mat-toolbar color="primary">
+      </mat-toolbar>
+      <mat-nav-list>
+        <div *ngFor="let link of links">
+          <mat-list-item role="link" #links routerLinkActive="active-link" (click)="sidenav.close()" routerLink="{{link.href}}">
+            <mat-icon matListIcon svgIcon="{{link.icon}}"></mat-icon>
+            <a matLine> {{ link.name }}</a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!--***** html part of page *****-->
+    <div class="my-content" id="header-editor-panel">
+      <mat-toolbar class="mat-elevation-z8" color="primary" style="min-height:64px;">
+        <button *ngIf="isLoggedIn()" type="button" mat-icon-button (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="app-logo">
+          PG Management System
+        </div>
+        <span class="spacer"></span>
+        <button mat-icon-button *ngIf="isLoggedIn()">
+          <mat-icon class="mat-18" (click)="logout()">power_settings_new</mat-icon>
+        </button>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
 </div>

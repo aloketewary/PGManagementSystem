@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
+    }
   }
 
   createForm() {
@@ -45,7 +48,6 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     let userFound = false;
-    let isAccessDenied = false;
     this.login.getUsers().subscribe(elem => {
       elem.forEach(eachObj => {
         if (!userFound) {
@@ -53,11 +55,9 @@ export class LoginComponent implements OnInit {
             this.user.username === eachObj.username &&
             this.user.password === eachObj.password
           ) {
-            // if (this.user.user_role.toLowerCase() === 'manager' && eachObj.userRole.toLowerCase() !== 'manager') {
-            isAccessDenied = true;
-
+            userFound = true;
             console.log('logged in successfully');
-            console.log(elem);
+            localStorage.setItem('loggedIn', 'true');
             this.router.navigate(['/dashboard']);
           }
 

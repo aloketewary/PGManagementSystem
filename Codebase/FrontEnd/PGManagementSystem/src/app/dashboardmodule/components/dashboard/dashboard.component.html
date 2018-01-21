@@ -1,3 +1,98 @@
-<p>
-  dashboard works!
-</p>
+<div class="inner-user-sidenav-content">
+    <div class="p-b-1em">
+        <div fxLayout="row" fxLayoutAlign="space-around" fxLayoutWrap>
+            <mat-tab-group class="dashboard-tab-group">
+                <mat-tab label="HOME">
+                    <div>
+                        <div class="dashboard-tab-content" fxLayout="row" fxLayoutAlign="start center" fxLayoutWrap>
+                            <span *ngFor="let data of overview" [ngClass.gt-md]="{'width-class-25': true}" [ngClass.xs]="{'width-class-100': true}" ngClass="width-class-50">
+                                <mat-card class="card card-margin" fxFlex="100%">
+                                    <mat-toolbar class="title" style="background-color: white">{{ data.title}}</mat-toolbar>
+                                    <mat-card-content class="content">
+                                        <div class="pt-8 pb-32 card-line-height-72" fxlayout="column" fxlayoutalign="center center" style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; place-content: center; align-items: center;">
+                                            <div class="light-blue-fg font-size-72">
+                                                <countTo [from]="0" [duration]="4" [to]="data.mainData"></countTo>
+                                            </div>
+                                            <div class="h3 secondary-text font-weight-500">{{data.belowMainDataPara}}</div>
+                                        </div>
+                                        <div class="p-16 grey-50-bg border-top" fxlayout="row" fxlayoutalign="start center" style="flex-direction: row; box-sizing: border-box; display: flex; max-height: 100%; place-content: center flex-start; align-items: center;">
+                                            <span class="h4 secondary-text text-truncate">{{data.footerTitle}}:</span>
+                                            <span class="h4 ml-8">{{data.footerTitleData}}</span>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </span>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Tab 2">
+                    <ng-template mat-tab-label>
+                        Payment Summery
+                    </ng-template>
+                    <!-- <div class="demo-tab-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                          </div>   -->
+                </mat-tab>
+                <mat-tab label="MEMBERS">
+
+                    <div class="fuse-widget-front mat-white-bg mat-elevation-z2 ng-tns-c34-27">
+
+                        <div class="p-24 mb-8 border-bottom" fxlayout="row" fxlayoutalign="space-between center" style="flex-direction: row; box-sizing: border-box; display: flex; max-height: 100%; place-content: center space-between; align-items: center;">
+                            <div class="h2">Team Members</div>
+                            <div class="text-boxed red-bg white-fg m-0">20 members
+                            </div>
+                        </div>
+
+                        <mat-table #table [dataSource]="dataSource">
+
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="position">
+                                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="name">
+                                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Age Column -->
+                            <ng-container matColumnDef="age">
+                                <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Address Column -->
+                            <ng-container matColumnDef="address">
+                                <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+                            </ng-container>
+                            <!-- PhoneNo Column -->
+                            <ng-container matColumnDef="phoneno">
+                                <mat-header-cell *matHeaderCellDef> Contact No </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.phoneno}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="office">
+                                <mat-header-cell *matHeaderCellDef> Office </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.office}} </mat-cell>
+                            </ng-container>
+                            <ng-container matColumnDef="email">
+                                <mat-header-cell *matHeaderCellDef> Email Id </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

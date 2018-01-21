@@ -1,0 +1,198 @@
+$header-height: 64px;
+$width-list: 25 50 75 100;
+
+// Tab Group
+.dashboard-tab-group {
+    width: 100% !important;
+    height: 100vh !important;
+}
+
+.example-card {
+    width: 400px;
+}
+
+.card {
+    padding: 0;
+    margin: $header-height auto 0;
+    &-margin {
+        margin: 10px;
+    }
+    &-line-height-72 {
+        line-height: 72px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    box-sizing: border-box;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.6);
+    .title {
+        margin-right: auto;
+        font-weight: 400;
+    }
+}
+
+.content {
+    height: auto;
+}
+
+.login-container {
+    width: auto;
+    flex-direction: column;
+    padding: 3em 3em;
+    &>* {
+        width: 100%;
+    }
+}
+
+line-height-72 {
+    line-height: 72px;
+}
+
+// ##### IMPORTANT #####
+.width-class {
+    &-50 {
+        width: 50% !important;
+    }
+    &-100 {
+        width: 100% !important;
+    }
+    &-75 {
+        width: 75% !important;
+    }
+    &-25 {
+        width: 25% !important;
+    }
+}
+
+.font-size-72 {
+    font-size: 72px;
+}
+
+.light-blue-fg {
+    color: #03a9f4!important;
+}
+
+.red-fg {
+    color: hsla(12, 88%, 50%, 0.842)!important;
+}
+
+.grey-50-bg,
+.mat-grey-50-bg {
+    background-color: rgb(245, 240, 240)!important;
+}
+
+.border-top,
+.bt {
+    border-top: 1px solid rgba(0, 0, 0, .12);
+}
+
+.p-16 {
+    padding: 16px!important;
+}
+
+text,
+.mat-white-bg .secondary-text {
+    color: rgba(0, 0, 0, .54)!important;
+}
+
+.text-nowrap,
+.text-truncate {
+    white-space: nowrap;
+}
+
+.text-truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.h4,
+h4 {
+    font-size: 15px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.h4,
+h4 {
+    font-size: 15px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.ml-8 {
+    margin-left: 8px!important;
+    color: #327973!important;
+    font-size: 30px;
+    font-weight: 700
+}
+
+.pl-16 {
+    padding-left: 16px!important;
+}
+
+.pr-8 {
+    padding-right: 8px!important;
+}
+
+.py-16 {
+    padding-top: 16px!important;
+    padding-bottom: 16px!important;
+}
+
+.h-52 {
+    height: 52px!important;
+    min-height: 52px!important;
+    max-height: 52px!important;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}

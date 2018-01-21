@@ -2,26 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { MatToolbarModule, MatButtonModule } from '@angular/material';
-import { MatCardModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatMenuModule,
+  MatTabsModule,
+  MatTableModule
+} from '@angular/material';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatFormFieldModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
 // Import owncomponents here
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/components/login/login.component';
 import { appRoutes } from './app.route';
-
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryPGService } from './inMemory.web.api';
 import { AuthenticationService } from './share/service/authentication.service';
 import { LoginService } from './user/service/login.service';
 import { DashboardComponent } from './dashboardmodule/components/dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CountToModule } from 'angularx-count-to';
+import { DashboardService } from './dashboardmodule/services/dashboard.service';
 
 
 @NgModule({
@@ -33,24 +41,29 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryPGService),
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(appRoutes),
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatTableModule,
+    CountToModule,
   ],
   providers: [
     AuthenticationService,
-    LoginService
+    LoginService,
+    DashboardService
   ],
   bootstrap: [AppComponent]
 })
